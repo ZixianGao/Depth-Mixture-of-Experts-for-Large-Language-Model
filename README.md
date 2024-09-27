@@ -1,19 +1,14 @@
-# Depth MoE 改动处
+# Depth-Mixture-of-Experts-for-Large-Language-Model
+This is the code for the project Depth-Mixture-of-Experts-for-Large-Language-Model.
 
-## 文件：
+## Prepare data：
 ```
-open_instruct/transformers/models/llama/modeling_llama.py
+python open_instruct/reformat_datasets.py --dataset evol_codealpaca meta_math SlimOrca WizardLM_evol_instruct_V2_196k
 ```
 
-## 改动处：	
-
-1.类LlamaForCausalLM   ：
+## Fine-tuning：	
 ```
 1319-1334行：添加了loss
 ```
-2.类LlamaModel：
+bash scripts/finetune_codealpaca.sh
 ```	          
-927-929行：增添layer_router初始化
-1007-1123行：增加depth MoE的操作
-1135-1140行：输出中增加route weight的预测和label
-```
