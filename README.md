@@ -8,7 +8,5 @@ python open_instruct/reformat_datasets.py --dataset evol_codealpaca meta_math Sl
 
 ## Fine-tuning：	
 ```
-1319-1334行：添加了loss
-```
 bash scripts/finetune_codealpaca.sh
-```	          
+```      
